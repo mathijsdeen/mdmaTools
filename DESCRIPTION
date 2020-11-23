@@ -5,10 +5,13 @@ Version: 0.0.1
 Authors@R: c(person(given = "Mathijs", family = "Deen",
                     role  = c("aut", "cre"),
                     email = "m.l.deen@fsw.leidenuniv.nl"))
-Description: Provides a variety of functions for statistical modelling
+Description: Provides a variety of functions for statistical modelling.
 Depends:
-    R (>= 3.0)
+    R (>= 3.0),
+    pROC,
+    dplyr
 License: GPL-3 | file LICENSE
 URL: https://github.com/mathijsdeen/mdmaTools
 BugReports: https://github.com/mathijsdeen/mdmaTools/issues
 Maintainer: Mathijs Deen <mathijsdeen@gmail.com>
+RoxygenNote: 7.1.1
