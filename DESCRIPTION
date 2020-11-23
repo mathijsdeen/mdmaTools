@@ -4,7 +4,7 @@ Date: 2020-11-23
 Version: 0.0.2
 Authors@R: c(person(given = "Mathijs", family = "Deen",
                     role  = c("aut", "cre"),
-                    email = "m.l.deen@fsw.leidenuniv.nl"))
+                    email = "mathijsdeen@gmail.com"))
 Description: Provides a variety of functions for statistical modelling.
 Depends:
     R (>= 3.0),
