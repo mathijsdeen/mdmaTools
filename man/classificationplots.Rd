@@ -14,7 +14,9 @@ classificationplots(
   xlab.3 = "Predicted probability",
   labels.3 = NULL,
   xlim.3 = NULL,
-  ylim.3 = c(0, 10)
+  ylim.3 = c(0, 10),
+  pos.legend.2 = "right",
+  pos.legend.3 = "topright"
 )
 }
 \arguments{
@@ -37,6 +39,10 @@ classificationplots(
 \item{xlim.3}{\code{xlim} for conditional distribution plot}
 
 \item{ylim.3}{\code{ylim} for conditional distribution plot}
+
+\item{pos.legend.2}{location for legend in sensitivity/specificity plot}
+
+\item{pos.legend.3}{location for legend in conditional distribution plot}
 }
 \value{
 \code{classificationplots} returns three plots, and invisibly a dataframe containing sensitivities and specificities at all available threshold values.

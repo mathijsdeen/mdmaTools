@@ -10,6 +10,8 @@
 #' @param labels.3 legend labels for both groups in \code{levels} in conditional distribution plot
 #' @param xlim.3 \code{xlim} for conditional distribution plot
 #' @param ylim.3 \code{ylim} for conditional distribution plot
+#' @param pos.legend.2 location for legend in sensitivity/specificity plot
+#' @param pos.legend.3 location for legend in conditional distribution plot
 #' @return \code{classificationplots} returns three plots, and invisibly a dataframe containing sensitivities and specificities at all available threshold values.
 #' @examples
 #' library(pROC)
