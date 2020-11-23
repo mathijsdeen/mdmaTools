@@ -17,7 +17,9 @@
 #' @author Mathijs Deen
 #' @import dplyr
 #' @import pROC
-#'
+#' @importFrom graphics abline legend lines par points text
+#' @importFrom stats density
+#' @export
 classificationplots <- function(response, outcome, levels, cutoffs.1=NULL,
                                 cutoffs.2=NULL, cutoffs.3=NULL,
                                 xlab.3="Predicted probability",
