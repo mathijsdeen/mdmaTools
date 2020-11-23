@@ -24,7 +24,8 @@ classificationplots <- function(response, outcome, levels, cutoffs.1=NULL,
                                 cutoffs.2=NULL, cutoffs.3=NULL,
                                 xlab.3="Predicted probability",
                                 labels.3=NULL, xlim.3=NULL,
-                                ylim.3=c(0,10)){
+                                ylim.3=c(0,10), pos.legend.2="right",
+                                pos.legend.3="topright"){
   oldpty <- par()$pty
   oldmfrow <- par()$mfrow
   par(pty="s")
@@ -59,22 +60,22 @@ classificationplots <- function(response, outcome, levels, cutoffs.1=NULL,
               max(rr2$thresholds[is.finite(rr2$thresholds)])),
        xlab="Thresholds", ylab="Sensitivity / Specificity",lty=1)
   lines(rr2$thresholds,rr2$specificities, lty=2)
-  legend("right", legend=c("Sensitivity","Specificity"),lty=c(1,2))
+  legend(pos.legend.2, legend=c("Sensitivity","Specificity"),lty=c(1,2))
   abline(v=cutoffs.2, lty=3)
-  abline(h=0,col="grey")
-  abline(h=1,col="grey")
+  abline(h=-.01,col="grey")
+  abline(h=1.01,col="grey")
 
   #plot 3
   ifelse(is.null(labels.3),
          legendnames <- levels(outcome),
-         legendnames <- labels.3[c(2,1)])
+         legendnames <- labels.3)
   ifelse(is.null(xlim.3),
          xlm3 <- c(min(response),max(response)),
          xlm3 <- xlim.3)
   plot(density(response[outcome==levels(outcome)[1]]), xlim=xlm3,
        main="",xlab=xlab.3,lty=1, ylim=ylim.3)
   lines(density(response[outcome==levels(outcome)[2]]), lty=2)
-  legend("topright",legend=legendnames, lty=c(1,2))
+  legend(pos.legend.3,legend=legendnames, lty=c(1,2))
   abline(v=cutoffs.3, lty=3)
   abline(h=0,col="grey")
   par(pty=oldpty)
