@@ -16,10 +16,13 @@ The function returns
 \item{out}{a vector of the same length as \code{lhs}.}
 }
 \description{
-Evaluates of the left hand side argument is not in the right hand side argument. As such, it negates the `%in%` operator.
+Evaluates whether the left hand side argument is not in the right hand side argument. As such, it negates the \code{\%in\%} operator.
 }
 \details{
 blabla
+}
+\examples{
+c(1,2,3) \%nin\% c(1,2)
 }
 \author{
 Mathijs Deen
