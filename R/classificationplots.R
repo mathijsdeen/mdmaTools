@@ -17,7 +17,6 @@
 #' library(pROC)
 #' classificationplots(aSAH$s100b,aSAH$outcome,levels=c("Good","Poor"))
 #' @author Mathijs Deen
-#' @import dplyr
 #' @import pROC
 #' @importFrom graphics abline legend lines par points text
 #' @importFrom stats density

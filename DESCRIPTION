@@ -1,15 +1,14 @@
 Package: mdmaTools
 Title: Mathijs Deen's Miscellaneous Additional Tools
-Date: 2020-11-23
-Version: 0.0.2
+Date: 2020-11-24
+Version: 0.0.3
 Authors@R: c(person(given = "Mathijs", family = "Deen",
                     role  = c("aut", "cre"),
                     email = "mathijsdeen@gmail.com"))
 Description: Provides a variety of functions for statistical modelling.
 Depends:
     R (>= 3.0),
-    pROC,
-    dplyr
+    pROC
 License: GPL-3 | file LICENSE
 URL: https://github.com/mathijsdeen/mdmaTools
 BugReports: https://github.com/mathijsdeen/mdmaTools/issues
