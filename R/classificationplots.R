@@ -1,7 +1,7 @@
 #' @title Generate plots for classification
 #' @description Generate plots for classification of two groups given one continuous variable
 #' @param response continuous variable that is used as a classifier
-#' @param outcome grouping variable
+#' @param group grouping variable
 #' @param levels levels of the grouping variable that are to be classified (should be of length 2)
 #' @param cutoffs.1 cutoff values to be shown in the ROC curve
 #' @param cutoffs.2 cutoff values to be shown in the sensitivity/specificity plot
@@ -15,13 +15,13 @@
 #' @return \code{classificationplots} returns three plots, and invisibly a dataframe containing sensitivities and specificities at all available threshold values.
 #' @examples
 #' library(pROC)
-#' classificationplots(aSAH$s100b,aSAH$outcome,levels=c("Good","Poor"))
+#' classificationplots(aSAH$s100b,aSAH$group,levels=c("Good","Poor"))
 #' @author Mathijs Deen
 #' @import pROC
 #' @importFrom graphics abline legend lines par points text
 #' @importFrom stats density
 #' @export
-classificationplots <- function(response, outcome, levels, cutoffs.1=NULL,
+classificationplots <- function(response, group, levels, cutoffs.1=NULL,
                                 cutoffs.2=NULL, cutoffs.3=NULL,
                                 xlab.3="Predicted probability",
                                 labels.3=NULL, xlim.3=NULL,
@@ -31,7 +31,7 @@ classificationplots <- function(response, outcome, levels, cutoffs.1=NULL,
   oldmfrow <- par()$mfrow
   par(pty="s")
   par(mfrow=c(1,3))
-  rr <- roc(outcome,response,levels=levels)
+  rr <- roc(group,response,levels=levels)
   rr2 <- data.frame("sensitivities"=rr$sensitivities,
                     "specificities"=rr$specificities,
                     "specificities_inv"=1-rr$specificities,
@@ -68,14 +68,14 @@ classificationplots <- function(response, outcome, levels, cutoffs.1=NULL,
 
   #plot 3
   ifelse(is.null(labels.3),
-         legendnames <- levels(outcome),
+         legendnames <- levels(group),
          legendnames <- labels.3)
   ifelse(is.null(xlim.3),
          xlm3 <- c(min(response),max(response)),
          xlm3 <- xlim.3)
-  plot(density(response[outcome==levels(outcome)[1]]), xlim=xlm3,
+  plot(density(response[group==levels(group)[1]]), xlim=xlm3,
        main="",xlab=xlab.3,lty=1, ylim=ylim.3)
-  lines(density(response[outcome==levels(outcome)[2]]), lty=2)
+  lines(density(response[group==levels(group)[2]]), lty=2)
   legend(pos.legend.3,legend=legendnames, lty=c(1,2))
   abline(v=cutoffs.3, lty=3)
   abline(h=0,col="grey")
