@@ -12,14 +12,13 @@ lhs \%nin\% rhs
 \item{rhs}{right hand side}
 }
 \value{
-The function returns
-\item{out}{a vector of the same length as \code{lhs}.}
+The function returns a vector of the same length as \code{lhs}.
 }
 \description{
-Evaluates whether the left hand side argument is not in the right hand side argument. As such, it negates the \code{\%in\%} operator.
+Evaluates whether the left hand side argument is not in the right hand side argument.
 }
 \details{
-blabla
+The \code{\%nin\%} function negates the \code{\%in\%} operator.
 }
 \examples{
 c(1,2,3) \%nin\% c(1,2)
